@@ -1,0 +1,15 @@
+{
+  "name": "balance-diff-block",
+  "version": "1.0.0",
+  "main": "diff.js",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^5.0.2",
+    "axios": "^0.27.2",
+    "ethers": "^5.7.1"
+  },
+  "scripts": {
+    "diff": "node diff.js",
+    "check-relay": "node check-relay.js"
+  }
+}
