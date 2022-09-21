@@ -25,4 +25,4 @@ Balance diff: 0.597786452187815763
 Delta: 0.0
 ```
 
-Negative delta -> balance diff is less than balance relay value
+Negative delta -> balance diff is less than relay payload value
