@@ -20,9 +20,10 @@ balance diff: 71640660271666334
 ```bash
 yarn run check-relay --provider https://mainnet.infura.io/v3/.... --relay https://boost-relay.flashbots.net --slot 4746672
 
-Payload value:  0.597786452187815763
-Balance diff: 0.597786452187815763
-Delta: 0.0
+Payload value:                         0.597786452187815763
+Fee recipient balance diff:            0.597786452187815763
+Fee received - Payload value:          0.0
+Builder balance diff(builder profit):  0.000132265956706032
 ```
 
 Negative delta -> balance diff is less than relay payload value
