@@ -33,10 +33,15 @@ async function main() {
     const builderDiff = await getBalanceDiff(provider, builderAddress, block)
     const feeRecipientDiff = await getBalanceDiff(provider, feeRecipient, block)
 
-    console.log("Payload value:                        ", ethers.utils.formatEther(value))
-    console.log("Fee recipient balance diff:           ", ethers.utils.formatEther(feeRecipientDiff))
-    console.log("Fee received - Payload value:         ", ethers.utils.formatEther(feeRecipientDiff.sub(value)))
-    console.log("Builder balance diff(builder profit): ", ethers.utils.formatEther(builderDiff))
+    console.log("Slot:                                ", payload.slot)
+    console.log("Block hash:                          ", payload.block_hash)
+    console.log("Block number:                        ", block.toString())
+    console.log("Proposer fee recipient:              ", feeRecipient.toLowerCase())
+    console.log("Block fee recipient:                 ", builderAddress.toLowerCase())
+    console.log("Payload value:                       ", ethers.utils.formatEther(value))
+    console.log("Proposer fee recipient balance diff: ", ethers.utils.formatEther(feeRecipientDiff))
+    console.log("Fee received - Payload value:        ", ethers.utils.formatEther(feeRecipientDiff.sub(value)))
+    console.log("Block fee recipient balance diff:    ", ethers.utils.formatEther(builderDiff))
 }
 
 main()
