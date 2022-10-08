@@ -38,7 +38,7 @@ async function main() {
     console.log("Block number:                        ", block.toString())
     console.log("Proposer fee recipient:              ", feeRecipient.toLowerCase())
     console.log("Block fee recipient:                 ", builderAddress.toLowerCase())
-    console.log("Payload value:                       ", ethers.utils.formatEther(value))
+    console.log("Claimed payload value:               ", ethers.utils.formatEther(value))
     console.log("Proposer fee recipient balance diff: ", ethers.utils.formatEther(feeRecipientDiff))
     console.log("Fee received - Payload value:        ", ethers.utils.formatEther(feeRecipientDiff.sub(value)))
     console.log("Block fee recipient balance diff:    ", ethers.utils.formatEther(builderDiff))
