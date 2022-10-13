@@ -1,4 +1,4 @@
-module boost-cli
+module relay-info
 
 go 1.19
 

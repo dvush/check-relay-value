@@ -6,14 +6,14 @@ go build
 
 # Usage
 
-See `./boost-cli -h`
+See `./relay-info -h`
 
 ## Relays
 
 List relays
 
 ```
-./boost-cli relays
+./relay-info relays
 
 Available relays:
 flashbots            https://boost-relay.flashbots.net
@@ -28,7 +28,7 @@ manifold             https://mainnet-relay.securerpc.com
 ## Status
 
 ```
-./boost-cli -R flashbots status
+./relay-info -R flashbots status
 
 OK
 ```
@@ -37,7 +37,7 @@ OK
 List validators for the current epoch
 
 ```
-./boost-cli -R flashbots validators
+./relay-info -R flashbots validators
 
 slot    proposer pubkey                                                                                    fee recepient                              timestamp  gaslimit 
 4903680 0x8d2b505bbf55185201c2df4863b553fe2305a924668e1383a4010a677205c4be6ba4ef221a23b6f425e1fcd5b81b6e4b 0x388c818ca8b9251b393131c08a736a67ccb19297 1665496511 30000000
@@ -86,7 +86,7 @@ Use flags `--slot` or `--block` to see payload delivered for the concrete slot o
 1. Without `--check` flag it will simply output payloads delivered by the relay
 
 ```
-./boost-cli -R flashbots delivered --slot 4903741
+./relay-info -R flashbots delivered --slot 4903741
 
 slot    block hash                                                         builder    gas used gas limit value
 4903741 0x6132a55317beed1c644d58592d0a5c2fc631b7cd3826f38d634acc440b3a6366 0x81babeec 20576237  30000000 0.07622905111
@@ -97,7 +97,7 @@ slot    block hash                                                         build
 It needs Ethereum rpc available (set with `-r` flag or `$ETH_RPC_URL` env).
 
 ```
-./boost-cli -R flashbots -r http://localhost:8545 delivered --block 15739594 --check  
+./relay-info -R flashbots -r http://localhost:8545 delivered --block 15739594 --check  
 
 slot    block    builder    proposer fee rec.                          block fee rec.                             claimed value  prop. diff.    value delta    rec. diff.    
 4903741 15739594 0x81babeec 0x388c818ca8b9251b393131c08a736a67ccb19297 0xDAFEA492D9c6733ae3d56b7Ed1ADB60692c98Bc5 0.07622905111  0.07622905111  0              0             
