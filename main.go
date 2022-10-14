@@ -17,6 +17,7 @@ import (
 	"net/url"
 	"os"
 	"strconv"
+	"time"
 )
 
 type ErrorMessage struct {
@@ -55,11 +56,12 @@ func request(relayUrl, path string, values url.Values) ([]byte, error) {
 }
 
 func Status(relayUrl string) error {
+	start := time.Now()
 	_, err := request(relayUrl, "/eth/v1/builder/status", nil)
 	if err != nil {
 		return err
 	}
-	log.Println("OK")
+	log.Printf("OK, time: %s\n", time.Since(start))
 
 	return nil
 }
